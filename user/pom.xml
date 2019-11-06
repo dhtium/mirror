@@ -15,6 +15,13 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
+    <dependencies>
+        <!-- servlet -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+        </dependency>
+    </dependencies>
 
     <build>
         <plugins>
@@ -25,6 +32,7 @@
                 <configuration>
                     <path>/user</path>
                     <port>8888</port>
+                    <update>true</update>
                 </configuration>
             </plugin>
         </plugins>

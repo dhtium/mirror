@@ -9,9 +9,27 @@
     <packaging>pom</packaging>
 
     <properties>
+        <!-- 部署时的代码编码 -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <!-- 集中定义依赖版本号 -->
         <tomcat.version>2.2</tomcat.version>
+        <servlet.version>4.0.1</servlet.version>
     </properties>
+
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- servlet -->
+            <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>javax.servlet-api</artifactId>
+                <version>${servlet.version}</version>
+                <scope>provided</scope>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
 
     <build>
         <pluginManagement>

@@ -3,8 +3,16 @@
 <html>
 <head>
     <title>首页</title>
+    <style>
+        #title {
+            font-size: large;
+            background-color: lightskyblue;
+        }
+    </style>
 </head>
 <body>
-<h2>Hello World</h2>
+<span id="title">用户管理</span>
+<hr/>
+<a href="http://www.baidu.com">百度一下</a>
 </body>
 </html>
