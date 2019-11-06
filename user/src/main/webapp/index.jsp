@@ -14,5 +14,6 @@
 <span id="title">用户管理</span>
 <hr/>
 <a href="http://www.baidu.com">百度一下</a>
+<jsp:forward page="page/userList.jsp"/>
 </body>
 </html>

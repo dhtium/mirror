@@ -13,7 +13,11 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <!-- 集中定义依赖版本号 -->
         <tomcat.version>2.2</tomcat.version>
+
         <servlet.version>4.0.1</servlet.version>
+        <servlet.jsp.version>2.3.3</servlet.jsp.version>
+        <servlet.jstl.version>1.2</servlet.jstl.version>
+        <servlet.taglibs.version>1.1.2</servlet.taglibs.version>
     </properties>
 
 
@@ -25,6 +29,26 @@
                 <artifactId>javax.servlet-api</artifactId>
                 <version>${servlet.version}</version>
                 <scope>provided</scope>
+            </dependency>
+
+            <!-- pageContext内置对象-->
+            <dependency>
+                <groupId>javax.servlet.jsp</groupId>
+                <artifactId>javax.servlet.jsp-api</artifactId>
+                <version>${servlet.jsp.version}</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <!-- JSP标准标签库 -->
+            <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>jstl</artifactId>
+                <version>${servlet.jstl.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>taglibs</groupId>
+                <artifactId>standard</artifactId>
+                <version>${servlet.taglibs.version}</version>
             </dependency>
 
         </dependencies>
