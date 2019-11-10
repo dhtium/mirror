@@ -1,6 +1,6 @@
 package org.element.mirror.user.dao;
 
-import org.element.mirror.user.entity.UserDO;
+import org.element.mirror.user.entity.User;
 
 import java.util.List;
 import java.util.Map;
@@ -18,7 +18,7 @@ public interface UserDao {
      * @param id 主键
      * @return 单个用户信息
      */
-    UserDO getUserDO(Integer id);
+    User getUser(Integer id);
 
     /**
      * 查询多个用户
@@ -26,7 +26,7 @@ public interface UserDao {
      * @param queryCondition 查询条件
      * @return 多个用户
      */
-    List<UserDO> listUserDO(Map<String, Object> queryCondition);
+    List<User> listUser(Map<String, Object> queryCondition);
 
     /**
      * 查询用户数
@@ -34,15 +34,15 @@ public interface UserDao {
      * @param queryCondition 查询条件
      * @return 用户数
      */
-    int countUserDO(Map<String, Object> queryCondition);
+    int countUser(Map<String, Object> queryCondition);
 
     /**
      * 插入用户
      *
-     * @param userDO 用户表
-     * @return UserDO
+     * @param user 用户表
+     * @return User
      */
-    UserDO insertUserDO(UserDO userDO);
+    int insertUser(User user);
 
     /**
      * 删除用户
@@ -50,14 +50,14 @@ public interface UserDao {
      * @param deleteCondition 删除条件
      * @return 删除的用户个数
      */
-    int deleteUserDO(Map<String, Object> deleteCondition);
+    int deleteUser(Map<String, Object> deleteCondition);
 
     /**
      * 修改用户信息
      *
-     * @param userDO 修改用户信息
-     * @return userDO
+     * @param user 修改用户信息
+     * @return user
      */
-    UserDO updateUserDO(UserDO userDO);
+    int updateUser(User user);
 
 }

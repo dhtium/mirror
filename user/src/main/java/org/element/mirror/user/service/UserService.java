@@ -1,6 +1,6 @@
 package org.element.mirror.user.service;
 
-import org.element.mirror.user.entity.UserDTO;
+import org.element.mirror.user.entity.User;
 
 import java.util.List;
 import java.util.Map;
@@ -13,17 +13,17 @@ public interface UserService {
      * 返回业务bean
      *
      * @param id 查询主键
-     * @return userDTO
+     * @return user
      */
-    UserDTO getUserDTO(Integer id);
+    User getUser(Integer id);
 
     /**
      * 返回多个业务bean
      *
      * @param queryCondition 查询条件
-     * @return list<UserDTO>
+     * @return list<User>
      */
-    List<UserDTO> listUserDTO(Map<String, Object> queryCondition);
+    List<User> listUser(Map<String, Object> queryCondition);
 
     /**
      * 返回查询的用户数
@@ -31,31 +31,31 @@ public interface UserService {
      * @param queryCondition 查询条件
      * @return 返回用户数
      */
-    Integer countUserDTO(Map<String, Object> queryCondition);
+    int countUser(Map<String, Object> queryCondition);
 
     /**
      * 保存用户
      *
-     * @param userDTO 业务bean
+     * @param user 业务bean
      * @return 返回插入后的用户
      */
-    UserDTO saveUserDTO(UserDTO userDTO);
+    int saveUser(User user);
 
     /**
      * 删除用户
      *
-     * @param userDTO 业务bean
-     * @return 返回删除的用户
+     * @param deleteCondition 删除条件
+     * @return 返回删除的用户数
      */
-    UserDTO removeUserDTO(UserDTO userDTO);
+    int removeUser(Map<String, Object> deleteCondition);
 
     /**
      * 修改用户信息
      *
-     * @param userDTO 业务bean
-     * @return 修改后的用户信息
+     * @param user 业务bean
+     * @return 修改后的用户数
      */
-    UserDTO updateUserDTO(UserDTO userDTO);
+    int updateUser(User user);
 
 
 }

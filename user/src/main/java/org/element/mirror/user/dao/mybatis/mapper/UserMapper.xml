@@ -2,27 +2,27 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="org.element.mirror.user.dao.UserDao">
-    <select id="getUserDO" parameterType="int" resultType="UserDO">
+    <select id="getUser" parameterType="int" resultType="User">
         SELECT * FROM user WHERE id = #{id}
     </select>
 
-    <select id="listUserDO" parameterType="map" resultType="UserDO">
+    <select id="listUser" parameterType="map" resultType="User">
         SELECT * FROM user WHERE id = #{id}
     </select>
 
-    <select id="countUserDO" parameterType="map" resultType="int">
+    <select id="countUser" parameterType="map" resultType="int">
         SELECT count(*) FROM user WHERE id = #{id}
     </select>
 
-    <insert id="insertUserDO" parameterType="UserDO" useGeneratedKeys="true" keyProperty="id">
+    <insert id="insertUser" parameterType="User" useGeneratedKeys="true" keyProperty="id">
         INSERT into user(name, password, lastAccessTime, enable) values (#{name}, #{password}, #{lastAccessTime}, #{enable})
     </insert>
 
-    <delete id="deleteUserDO" parameterType="map">
+    <delete id="deleteUser" parameterType="map">
         DELETE FROM user WHERE id = #{id}
     </delete>
 
-    <update id="updateUserDO" parameterType="UserDO">
+    <update id="updateUser" parameterType="User">
         UPDATE user SET name = #{name}, password=#{password}
         WHERE id = #{id}
     </update>
