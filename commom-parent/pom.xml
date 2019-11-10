@@ -21,6 +21,17 @@
 
 
         <spring.version>5.2.1.RELEASE</spring.version>
+
+        <mybatis.version>3.5.3</mybatis.version>
+        <mybatis-spring.versoin>2.0.3</mybatis-spring.versoin>
+
+        <mysql-connector-java.version>8.0.18</mysql-connector-java.version>
+        <c3p0.version>0.9.5.4</c3p0.version>
+        <commons-dbcp2.version>2.7.0</commons-dbcp2.version>
+
+
+        <junit.version>4.12</junit.version>
+        <lombok.version>1.18.10</lombok.version>
     </properties>
 
 
@@ -102,6 +113,60 @@
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-orm</artifactId>
                 <version>${spring.version}</version>
+            </dependency>
+
+            <!-- 数据库连接 -->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql-connector-java.version}</version>
+            </dependency>
+
+            <!-- c3p0 -->
+            <dependency>
+                <groupId>com.mchange</groupId>
+                <artifactId>c3p0</artifactId>
+                <version>${c3p0.version}</version>
+            </dependency>
+
+            <!-- dbcp连接池 -->
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-dbcp2</artifactId>
+                <version>${commons-dbcp2.version}</version>
+            </dependency>
+
+
+            <!-- 数据库框架 -->
+            <dependency>
+                <groupId>org.mybatis</groupId>
+                <artifactId>mybatis</artifactId>
+                <version>${mybatis.version}</version>
+            </dependency>
+
+            <!-- spring整合mybatis -->
+            <dependency>
+                <groupId>org.mybatis</groupId>
+                <artifactId>mybatis-spring</artifactId>
+                <version>${mybatis-spring.versoin}</version>
+            </dependency>
+
+
+            <!-- 辅助框架 -->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+                <scope>provided</scope>
+            </dependency>
+
+
+            <!-- 测试框架 -->
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit.version}</version>
+                <scope>test</scope>
             </dependency>
 
 

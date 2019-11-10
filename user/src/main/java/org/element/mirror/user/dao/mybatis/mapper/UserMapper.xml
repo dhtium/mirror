@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.element.mirror.user.dao.UserDao">
+    <select id="getUserDO" parameterType="int" resultType="UserDO">
+        SELECT * FROM user WHERE id = #{id}
+    </select>
+
+    <select id="listUserDO" parameterType="map" resultType="UserDO">
+        SELECT * FROM user WHERE id = #{id}
+    </select>
+
+    <select id="countUserDO" parameterType="map" resultType="int">
+        SELECT count(*) FROM user WHERE id = #{id}
+    </select>
+
+    <insert id="insertUserDO" parameterType="UserDO" useGeneratedKeys="true" keyProperty="id">
+        INSERT into user(name, password, lastAccessTime, enable) values (#{name}, #{password}, #{lastAccessTime}, #{enable})
+    </insert>
+
+    <delete id="deleteUserDO" parameterType="map">
+        DELETE FROM user WHERE id = #{id}
+    </delete>
+
+    <update id="updateUserDO" parameterType="UserDO">
+        UPDATE user SET name = #{name}, password=#{password}
+        WHERE id = #{id}
+    </update>
+</mapper>
