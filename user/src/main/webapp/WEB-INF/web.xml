@@ -4,6 +4,36 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
 
+    <!-- 1. 配置spring监听器，加载spring配置文件-->
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>classpath:spring/applicationContext.xml</param-value>
+    </context-param>
+
+    <!-- 2. 配置springMVC -->
+    <!--
+            springMVC的配置文件必须写在这个servlet下,写在context下会找不到
+            springMVC会默认加载配置文件
+            命名规范：servlet-name-servlet.xml === springMVC-servlet.xml
+            路径规范: springMVC-servlet.xml必须放在WEB-INF下面
+    -->
+    <servlet>
+        <servlet-name>springMVC</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>classpath:spring/springMVC-servlet.xml</param-value>
+        </init-param>
+    </servlet>
+
+    <!-- 映射url写成/*，会有方法匹配不上 -->
+    <servlet-mapping>
+        <servlet-name>springMVC</servlet-name>
+        <url-pattern>*.html</url-pattern>
+    </servlet-mapping>
 
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
