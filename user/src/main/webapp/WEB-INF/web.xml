@@ -29,10 +29,10 @@
         </init-param>
     </servlet>
 
-    <!-- 映射url写成/*，会有方法匹配不上 -->
+    <!-- 映射url写成/*，会有方法匹配不上，/为根路径 -->
     <servlet-mapping>
         <servlet-name>springMVC</servlet-name>
-        <url-pattern>*.html</url-pattern>
+        <url-pattern>/</url-pattern>
     </servlet-mapping>
 
     <welcome-file-list>

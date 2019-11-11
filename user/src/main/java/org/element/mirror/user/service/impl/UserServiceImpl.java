@@ -12,7 +12,7 @@ import java.util.Map;
 /**
  * @author dhtium
  */
-@Service("userService")
+@Service
 public class UserServiceImpl implements UserService {
 
     private final UserDao userDao;

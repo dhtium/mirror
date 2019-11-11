@@ -8,6 +8,13 @@
        http://www.springframework.org/schema/mvc 
        https://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
 
+    <!-- 此处必须要配置扫描包，与spring配置中的不冲突 -->
     <context:component-scan base-package="org.element.mirror.user.action"/>
     <mvc:annotation-driven/>
+
+    <!-- 配置视图解析器 -->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/page/"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
 </beans>

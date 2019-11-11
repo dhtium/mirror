@@ -24,7 +24,9 @@
         <aspectjweaver.version>1.9.4</aspectjweaver.version>
 
         <mybatis.version>3.5.3</mybatis.version>
-        <mybatis-spring.versoin>2.0.3</mybatis-spring.versoin>
+        <mybatis-spring.version>2.0.3</mybatis-spring.version>
+
+        <jackson.version>2.10.0</jackson.version>
 
         <mysql-connector-java.version>8.0.18</mysql-connector-java.version>
         <c3p0.version>0.9.5.4</c3p0.version>
@@ -123,6 +125,25 @@
                 <version>${aspectjweaver.version}</version>
             </dependency>
 
+
+            <!-- JSON解析 -->
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-core</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-annotations</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+
+
             <!-- 数据库连接 -->
             <dependency>
                 <groupId>mysql</groupId>
@@ -156,7 +177,7 @@
             <dependency>
                 <groupId>org.mybatis</groupId>
                 <artifactId>mybatis-spring</artifactId>
-                <version>${mybatis-spring.versoin}</version>
+                <version>${mybatis-spring.version}</version>
             </dependency>
 
 
