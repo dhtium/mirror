@@ -29,7 +29,11 @@
         </init-param>
     </servlet>
 
-    <!-- 映射url写成/*，会有方法匹配不上，/为根路径 -->
+    <!-- 映射url规则与servlet稍有不同
+            /*，会有方法匹配不上，
+            /为根路径，匹配所有
+            .do 会拦截.do结尾的请求
+     -->
     <servlet-mapping>
         <servlet-name>springMVC</servlet-name>
         <url-pattern>/</url-pattern>

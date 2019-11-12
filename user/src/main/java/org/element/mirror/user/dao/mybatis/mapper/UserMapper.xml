@@ -2,16 +2,35 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="org.element.mirror.user.dao.UserDao">
+    <!--提取公共的sql语句-->
+    <sql id="whereClause">
+        <if test="id != null">
+            AND id = #{id}
+        </if>
+        <if test="name != null">
+            AND name = #{name}
+        </if>
+        <if test="enable != null">
+            AND enable = #{enable}
+        </if>
+    </sql>
+
     <select id="getUser" parameterType="int" resultType="User">
         SELECT * FROM user WHERE id = #{id}
     </select>
 
     <select id="listUser" parameterType="map" resultType="User">
-        SELECT * FROM user WHERE id = #{id}
+        SELECT * FROM user
+        <where>
+            <include refid="whereClause"/>
+        </where>
     </select>
 
     <select id="countUser" parameterType="map" resultType="int">
-        SELECT count(*) FROM user WHERE id = #{id}
+        SELECT count(*) FROM user
+        <where>
+            <include refid="whereClause"/>
+        </where>
     </select>
 
     <insert id="insertUser" parameterType="User" useGeneratedKeys="true" keyProperty="id">
@@ -19,7 +38,10 @@
     </insert>
 
     <delete id="deleteUser" parameterType="map">
-        DELETE FROM user WHERE id = #{id}
+        DELETE FROM user
+        <where>
+            <include refid="whereClause"/>
+        </where>
     </delete>
 
     <update id="updateUser" parameterType="User">

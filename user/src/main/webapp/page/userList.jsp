@@ -7,6 +7,6 @@
 <body>
 
 Hello World
-
+${requestScope.user.name}
 </body>
 </html>
