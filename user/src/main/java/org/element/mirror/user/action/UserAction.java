@@ -2,6 +2,8 @@ package org.element.mirror.user.action;
 
 import org.element.mirror.user.entity.User;
 import org.element.mirror.user.service.UserService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
@@ -20,6 +22,8 @@ import java.util.Map;
 @Controller
 @RequestMapping("user")
 public class UserAction {
+    private static final Logger LOGGER = LoggerFactory.getLogger(UserAction.class);
+
     private UserService userService;
 
     @Autowired
@@ -47,6 +51,7 @@ public class UserAction {
     @ResponseBody
     public User getUser(@PathVariable("userId") Integer id, @CookieValue("JSESSIONID") String sessionId) {
         System.out.println(sessionId);
+        LOGGER.info("This is the first logger from action : sessionId = {}", sessionId);
         return userService.getUser(id);
     }
 

@@ -16,6 +16,16 @@
     <!-- 0. 加载文件资源 -->
     <context:property-placeholder location="classpath:db/jdbc.properties"/>
 
+    <!-- 可加载多个文件位置 -->
+    <bean class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer">
+        <property name="locations">
+            <set>
+                <value>classpath:*/*.properties</value>
+            </set>
+        </property>
+        <property name="ignoreUnresolvablePlaceholders" value="true"/>
+    </bean>
+
     <!-- 1. 数据源 -->
     <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
         <property name="driverClass" value="${jdbc.driverClass}"/>
