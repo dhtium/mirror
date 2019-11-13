@@ -8,9 +8,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
+import java.io.File;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -68,9 +71,24 @@ public class UserAction {
 
     @DeleteMapping(value = "{userId}")
     public void deleteUser(@PathVariable("userId") Integer id) {
-        Map<String, Object> deleteMap = new HashMap<>();
+        Map<String, Object> deleteMap = new HashMap<>(1);
         deleteMap.put("id", id);
         userService.removeUser(deleteMap);
+    }
+
+    @RequestMapping(value = "upload", method = RequestMethod.POST)
+    public String uploadFile(@RequestParam("file") MultipartFile multipartFile) throws IOException {
+        System.out.println(multipartFile.getOriginalFilename() + ":");
+        File dir = new File("WEB-INF/upload");
+
+        if (!dir.exists()) {
+            if (!dir.mkdirs()) {
+                return "create file failed";
+            }
+        }
+        System.out.println(dir.getAbsolutePath());
+        multipartFile.transferTo(dir);
+        return "success";
     }
 
 
