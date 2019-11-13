@@ -2,7 +2,7 @@
 
 .idea
 *.iml
-test/
+test
 
 **/META-INF/
 **/target/
