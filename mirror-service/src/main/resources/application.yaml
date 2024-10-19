@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: mirror
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    name: root
+    password: root
+    url: jdbc:mysql://node0:3308/mirror
