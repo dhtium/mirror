@@ -1,2 +1,2 @@
-## The eternal unchanging is ever changing
+## The eternal unchanging is ever-changing
 
