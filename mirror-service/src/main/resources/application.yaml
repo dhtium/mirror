@@ -4,6 +4,6 @@ spring:
 
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    name: root
+    username: root
     password: root
     url: jdbc:mysql://node0:3308/mirror

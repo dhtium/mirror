@@ -1,6 +1,8 @@
 package org.element.hydrogen.mirror.controller;
 
+import jakarta.annotation.Resource;
 import org.element.hydrogen.mirror.api.UserApi;
+import org.element.hydrogen.mirror.service.UserService;
 import org.element.hydrogen.mirror.vo.request.user.UserAddRequest;
 import org.element.hydrogen.mirror.vo.response.user.UserInfo;
 import org.springframework.web.bind.annotation.RestController;
@@ -11,6 +13,10 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 public class UserController implements UserApi {
+
+    @Resource
+    private UserService userService;
+
     @Override
     public boolean addUser(UserAddRequest request) {
         return false;
@@ -18,6 +24,6 @@ public class UserController implements UserApi {
 
     @Override
     public UserInfo getUserInfo(Long id) {
-        return null;
+        return userService.getById(id);
     }
 }
